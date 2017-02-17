@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<!-- 切面类 -->
+	<bean id="moocAspect" class="meng.spring.test16.aop.MoocAspect"></bean>
+
+	<!-- 业务类 -->
+	<bean id="aspectBiz" class="meng.spring.test16.aop.AspectBiz"></bean>
+
+	<!-- AOP配置 -->
+	<aop:config>
+		<!-- 切面 -->
+		<aop:aspect id="moocAspectAOP" ref="moocAspect">
+			<aop:declare-parents types-matching="meng.spring.test16.aop.*(+)"
+				implement-interface="meng.spring.test17.aop.Fit" 
+				default-impl="meng.spring.test17.aop.FitImpl" />
+		</aop:aspect>
+	</aop:config>
+
+</beans>
