@@ -13,7 +13,6 @@ public class Test {
 	public static void main(String[] args) {
 		ApplicationContext context = null;
 		try {
-			// /Spring_Introduction/resources/spring-aop-schema-advisors.xml
 			context = new ClassPathXmlApplicationContext(
 					"classpath:spring-aop-schema-advisors.xml");
 		} catch (BeansException e) {
