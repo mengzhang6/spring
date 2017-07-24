@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans.xsd  
+        http://www.springframework.org/schema/aop 
+        http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
+
+	<bean id="bizLogicImplTarget" class="meng.spring.test19.springaopapi.BizLogicImpl"></bean>
+
+	<!-- 切入点 -->
+	<bean id="nameMatchMethodPointcut" class="org.springframework.aop.support.NameMatchMethodPointcut">
+		<!-- 匹配的方法名集合 -->
+		<property name="mappedNames">
+			<list>
+				<!-- sa开头的方法 -->
+				<value>sa*</value>
+				<value>update*</value>
+				<value>select*</value>
+			</list>
+		</property>
+	</bean>
+
+
+
+</beans>

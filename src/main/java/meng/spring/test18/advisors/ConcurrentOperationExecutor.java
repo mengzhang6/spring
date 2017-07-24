@@ -9,7 +9,7 @@ public class ConcurrentOperationExecutor implements Ordered {
 	private static final int DEFAULT_MAX_RETRIES = 2;
 
 	private int maxRetries = DEFAULT_MAX_RETRIES;
-	
+
 	private int order = 1;
 
 	public void setMaxRetries(int maxRetries) {
@@ -24,14 +24,16 @@ public class ConcurrentOperationExecutor implements Ordered {
 		this.order = order;
 	}
 
-	public Object doConcurrentOperation(ProceedingJoinPoint pjp) throws Throwable {
+	public Object doConcurrentOperation(ProceedingJoinPoint pjp)
+			throws Throwable {
 		int numAttempts = 0;
 		PessimisticLockingFailureException lockFailureException;
 		do {
 			numAttempts++;
 			System.out.println("重试次数 : " + numAttempts);
 			try {
-				return pjp.proceed();
+				Object obj = pjp.proceed();
+				return obj;
 			} catch (PessimisticLockingFailureException ex) {
 				lockFailureException = ex;
 			}

@@ -1,0 +1,12 @@
+Introductions 简介
+简介允许一个切面声明一个实现指定接口的通知对象，并且提供一个接口实现类来代表这些对象
+
+<aop:config>
+	<!-- 切面 -->
+	<aop:aspect id="moocAspectAOP" ref="moocAspect">
+		<aop:declare-parents types-matching="meng.spring.test*.aop.*(+)"
+			implement-interface="meng.spring.test17.aop.Fit" 
+			default-impl="meng.spring.test17.aop.FitImpl" />
+	</aop:aspect>
+</aop:config>
+

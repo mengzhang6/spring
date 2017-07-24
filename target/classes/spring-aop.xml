@@ -11,12 +11,14 @@
 
 	<!-- 业务类 -->
 	<bean id="aspectBiz" class="meng.spring.test16.aop.AspectBiz"></bean>
+	
+	<bean id="mengBiz" class="meng.spring.test17.aop.MengBiz"></bean>
 
 	<!-- AOP配置 -->
 	<aop:config>
 		<!-- 切面 -->
 		<aop:aspect id="moocAspectAOP" ref="moocAspect">
-			<aop:declare-parents types-matching="meng.spring.test16.aop.*(+)"
+			<aop:declare-parents types-matching="meng.spring.test*.aop.*(+)"
 				implement-interface="meng.spring.test17.aop.Fit" 
 				default-impl="meng.spring.test17.aop.FitImpl" />
 		</aop:aspect>

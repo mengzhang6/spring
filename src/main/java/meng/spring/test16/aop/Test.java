@@ -6,6 +6,7 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 /**
  * 测试类
+ * 
  * @author mengzhang6
  *
  */
@@ -21,10 +22,10 @@ public class Test {
 			e.printStackTrace();
 		}
 
-		AspectBiz  aspectBiz= context.getBean("aspectBiz", AspectBiz.class);
-		//aspectBiz.biz();
-		aspectBiz.init("bao", 52);
-		
+		AspectBiz aspectBiz = context.getBean("aspectBiz", AspectBiz.class);
+		aspectBiz.biz();
+		// aspectBiz.init("bao", 52);
+
 	}
 
 }

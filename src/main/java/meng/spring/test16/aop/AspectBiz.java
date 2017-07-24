@@ -11,7 +11,7 @@ public class AspectBiz {
 	public void biz() {
 		System.out.println("业务类: biz");
 		// 测试 aop:after-throwing
-		// throw new RuntimeException();
+		 throw new RuntimeException();
 	}
 
 	public void init(String name, int count) {

@@ -1,0 +1,44 @@
+测试场景1：
+AspectBiz类的biz方法，注释掉 throw new RuntimeException();
+Test类 调用aspectBiz.biz(); 注释掉aspectBiz.init("bao", 52);
+spring-aop-schema-advice.xml 使用 环绕通知1
+结果：
+前置通知
+环绕通知---前
+业务类: biz
+环绕通知---后
+无论是正常返回后还是异常抛出后都会通知···
+正常返回后通知
+
+测试场景2：
+AspectBiz类的biz方法，不注释throw new RuntimeException();
+Test类 调用aspectBiz.biz(); 注释掉aspectBiz.init("bao", 52);
+spring-aop-schema-advice.xml 使用 环绕通知1
+结果：
+前置通知
+环绕通知---前
+业务类: biz
+java.lang.RuntimeException
+无论是正常返回后还是异常抛出后都会通知···
+正常返回后通知
+	at meng.spring.test16.aop.AspectBiz.biz(AspectBiz.java:14)
+
+spring-aop-schema-advice.xml 不使用 环绕通知
+结果：
+前置通知
+业务类: biz
+异常抛出后通知
+无论是正常返回后还是异常抛出后都会通知···
+Exception in thread "main" java.lang.RuntimeException
+
+测试场景3：
+Test类 注释掉aspectBiz.biz(); 不注释aspectBiz.init("bao", 52);
+spring-aop-schema-advice.xml 使用 环绕通知2
+结果：
+前置通知
+环绕通知:bao,52
+环绕通知---前
+业务类:bao,52
+环绕通知---后
+无论是正常返回后还是异常抛出后都会通知···
+正常返回后通知

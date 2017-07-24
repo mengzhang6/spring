@@ -41,7 +41,7 @@ public class MoocAspect {
 
 	public Object aroundInit(ProceedingJoinPoint pjp, String name, int count) {
 
-		System.out.println("环绕通知:"+name + "," + count);
+		System.out.println("环绕通知:" + name + "," + count);
 		Object obj = null;
 		try {
 			System.out.println("环绕通知---前");

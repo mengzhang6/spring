@@ -21,7 +21,9 @@ public class Test {
 
 		InvokeService invokeService = (InvokeService) context
 				.getBean("invokeService");
+		// 测试场景1：正常执行
 		// invokeService.invoke();
+		// 测试场景2：异常执行
 		invokeService.invokeException();
 	}
 

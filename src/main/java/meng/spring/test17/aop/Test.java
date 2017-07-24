@@ -19,7 +19,7 @@ public class Test {
 			e.printStackTrace();
 		}
 
-		Fit  fit= (Fit)context.getBean("aspectBiz");
+		Fit  fit= (Fit)context.getBean("mengBiz");
 		fit.filter();
 		
 	}

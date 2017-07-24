@@ -4,15 +4,29 @@
 
 	<groupId>meng.study.springframework</groupId>
 	<artifactId>spring</artifactId>
-	<version>1.0.1001-SNAPSHOT</version>
+	<version>1.0.1001</version>
 	<packaging>jar</packaging>
 
 	<name>spring</name>
 	<url>http://maven.apache.org</url>
 
+	<repositories>
+		<repository>
+			<id>maven-net-cn</id>
+			<name>Maven China Mirror</name>
+			<url>http://maven.net.cn/content/groups/public/</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>false</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-		<springframework.version>4.3.6.RELEASE</springframework.version>
+		<springframework.version>4.3.7.RELEASE</springframework.version>
 	</properties>
 
 	<dependencies>
@@ -76,7 +90,7 @@
 			<version>${springframework.version}</version>
 		</dependency>
 
-		<!--  -->
+		<!-- -->
 		<dependency>
 			<groupId>javax.inject</groupId>
 			<artifactId>javax.inject</artifactId>

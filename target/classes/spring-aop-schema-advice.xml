@@ -20,20 +20,26 @@
 			<!-- 切入点 以Biz结尾的类下的所有方法 -->
 			<aop:pointcut expression="execution(* meng.spring.test16.aop.*Biz.*(..))"
 				id="moocPointcut" />
-			<!-- 通知 -->
+			
+			<!-- 前置通知 -->
 			<aop:before method="before" pointcut-ref="moocPointcut" />
+			<!-- 正常后返回通知 -->
 			<aop:after-returning method="afterReturning"
 				pointcut-ref="moocPointcut" />
+			<!-- 发生异常时通知 -->
 			<aop:after-throwing method="afterThrowing"
 				pointcut-ref="moocPointcut" />
+			<!-- 后置通知：无论是正常返回后还是异常抛出后都会通知 -->
 			<aop:after method="after" pointcut-ref="moocPointcut" />
-			<!-- 环绕通知 -->
+			
+			<!-- 环绕通知1  第1种配置方式：使用pointcut-ref引用上面配置好的expression -->
 			<!-- <aop:around method="around" pointcut-ref="moocPointcut" /> -->
 
+			<!-- 环绕通知2  第2种配置方式：使用pointcut="" 编写自己的execution -->
 			<!-- 带参数的环绕通知 -->
-			<aop:around method="aroundInit"
+			<!-- <aop:around method="aroundInit"
 				pointcut="execution(* meng.spring.test16.aop.AspectBiz.init(String,int))
-				and args(name,count)" />
+				and args(name,count)" /> -->
 		</aop:aspect>
 	</aop:config>
 
