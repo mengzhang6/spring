@@ -4,4 +4,8 @@
 
 ## test16~? --> spring aop
 
+1. 使用 IDEA
+2. 使用构建工具maven
+3. 重构产物 重构了[spring-framework-sample-v01](https://github.com/mengzhang6/spring-framework-sample-v01)
 
+bulabula
